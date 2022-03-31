@@ -8,14 +8,13 @@ export default function CocktailsList({ cocktails }) {
   const onItemClick = useCallback((id, data) => {
     navigate(`cocktail/${id}`, { state: { data } });
   }, []);
-  console.log(cocktails);
   return (
     <div className="cocktails">
       {cocktails.map((item, index) => (
         <CocktailItem
           data={item}
           key={index}
-          onItemClick={(data) => onItemClick(item.idDrink, data)}
+          onItemClick={(data) => onItemClick(data.idDrink, data)}
         />
       ))}
     </div>

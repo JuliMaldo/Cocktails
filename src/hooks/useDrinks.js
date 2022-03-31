@@ -15,7 +15,7 @@ export function useDrinks() {
       );
       setLoading(false);
     });
-  }, [setDrinks]);
+  }, []);
 
   return { loading, drinks };
 }

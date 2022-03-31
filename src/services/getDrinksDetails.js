@@ -4,7 +4,7 @@ export default function getDrinksDetails(idDrink) {
     .then((res) => res.json())
     .then((response) => {
       const { drinks } = response;
-      const { strDrink, strInstructions, strDrinkThumb } = drinks[0];
+      const { strDrink, strInstructions, strDrinkThumb, idDrink } = drinks[0];
       let ingredients = [];
       let index = 1;
       while (drinks[0][`strIngredient${index}`]) {
@@ -14,7 +14,7 @@ export default function getDrinksDetails(idDrink) {
         });
         index++;
       }
-      return { strDrink, strInstructions, strDrinkThumb, ingredients };
+      return { strDrink, strInstructions, strDrinkThumb, ingredients, idDrink };
     })
     .catch((err) => console.log("Error", err));
 }
